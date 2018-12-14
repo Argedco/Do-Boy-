@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public Animator PlayerAnimator;
     public SpriteRenderer PlayerSprite;
     public Collider2D playerCollider;
+    public Animator animator;
 
     // Use this for initialization
     void Start()
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
 
         //Get Axis Input from Unity
         float leftRight = Input.GetAxis(horizontalAxis);
@@ -47,7 +50,7 @@ public class Player : MonoBehaviour
         physicsBody.velocity = velocity;
 
         //Tell the animator our speed
-        PlayerAnimator.SetFloat("WalkSpeed", Mathf.Abs(velocity.x));
+        PlayerAnimator.SetFloat("speed", Mathf.Abs(leftRight));
 
         //Flip our sprite if we're moving backward
         if (velocity.x < 0)
