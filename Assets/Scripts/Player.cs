@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public SpriteRenderer PlayerSprite;
     public Collider2D playerCollider;
     public Animator animator;
+    public Lives lives;
 
     // Use this for initialization
     void Start()
@@ -89,6 +90,11 @@ public class Player : MonoBehaviour
     //Our own fuction for handling player death
     public void Kill()
     {
+
+        lives.LoseLife();
+
+        lives.SaveLives();
+
         //Reset the current level to restart from the beginning.
 
         //First, ask unity what the current level is
