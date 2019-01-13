@@ -8,6 +8,8 @@ public class Coin : MonoBehaviour {
     //      Public so we can drag and drop
     public Score scoreObject;
 
+    AudioSource HurtSound;
+
     // Variable to hold the coin's point value
     //      Public so we can change it in the editor
     public int coinValue;
@@ -36,8 +38,10 @@ public class Coin : MonoBehaviour {
         {
             // We hit the player!
 
+            
             // Add to the score based on our value
             scoreObject.AddScore(coinValue);
+            
 
             // Destroy the gameObject that this script is attached to
             // (the coin)
