@@ -16,7 +16,7 @@ TagManager:
   - 
   - BG
   - Ground
-  - 
+  - Player
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 431033311
+    locked: 0
+  - name: Ground
+    uniqueID: 3380035907
+    locked: 0
+  - name: Player
+    uniqueID: 3710691099
+    locked: 0
+  - name: Pickups
+    uniqueID: 2855688705
     locked: 0
