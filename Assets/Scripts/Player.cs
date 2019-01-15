@@ -95,14 +95,22 @@ public class Player : MonoBehaviour
 
         lives.SaveLives();
 
-        //Reset the current level to restart from the beginning.
+        if (lives.IsGameOver())
+        {
+            // Go to game over screen
+            SceneManager.LoadScene("GameOver");
+        }
+        else
+        {
+            //Reset the current level to restart from the beginning.
 
-        //First, ask unity what the current level is
-        Scene currentLevel = SceneManager.GetActiveScene();
+            //First, ask unity what the current level is
+            Scene currentLevel = SceneManager.GetActiveScene();
 
-        //Second, tell unity to load the current level again.
-        //By passing the build index of our level
-        SceneManager.LoadScene(currentLevel.buildIndex);
+            //Second, tell unity to load the current level again.
+            //By passing the build index of our level
+            SceneManager.LoadScene(currentLevel.buildIndex);
+        }
 
 
     }
